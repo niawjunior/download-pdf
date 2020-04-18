@@ -8,6 +8,7 @@
 <body>
   <button onclick="download1()">Download PDF 1</button>
   <button onclick="download2()">Download PDF 2</button>
+  <button onclick="download3()">Download PDF 3</button>
 </body>
 </html>
 
@@ -34,6 +35,28 @@ for (let i of pdf) {
   link.href = i;
   link.download = i;
   link.dispatchEvent(new MouseEvent('click'));
+}
+}
+function download3() {
+var urls = [
+  'Eloquent_JavaScript.pdf',
+  'javascript_tutorial.pdf'
+]
+
+var interval = setInterval(download, 300, urls);
+
+function download(urls) {
+  var url = urls.pop();
+
+  var a = document.createElement("a");
+  a.setAttribute('href', url);
+  a.setAttribute('download', '');
+  a.setAttribute('target', '_blank');
+  a.click();
+
+  if (urls.length == 0) {
+    clearInterval(interval);
+  }
 }
 }
 </script>
