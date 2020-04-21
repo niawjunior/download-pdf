@@ -6,36 +6,20 @@
   <title>Document</title>
 </head>
 <body>
-  <button onclick="download1()">Download PDF 1</button>
   <button onclick="download2()">Download PDF 2</button>
   <button onclick="download3()">Download PDF 3</button>
 </body>
 </html>
 
 <script>
-function download1() {
-var pdf = ['Eloquent_JavaScript.pdf', 'javascript_tutorial.pdf']
-
-for (var i of pdf) {
-  fetch(i).then(function(t) {
-    return t.blob().then((b)=>{
-        var a = document.createElement("a");
-        a.href = URL.createObjectURL(b);
-        a.setAttribute("download", i);
-        a.click();
-    }
-    );
-});
-}
-}
 function download2() {
 var pdf = ['Eloquent_JavaScript.pdf', 'javascript_tutorial.pdf']
-for (var j of pdf) {
-  var link = document.createElement('a');
-  link.href = j;
-  link.download = j;
-  link.dispatchEvent(new MouseEvent('click'));
-}
+  for (var j = 0; j < pdf.length; j++) {
+    var link = document.createElement('a');
+    link.href = pdf[j];
+    link.download = pdf[j];
+    link.dispatchEvent(new MouseEvent('click'));
+  }
 }
 function download3() {
 var urls = [
