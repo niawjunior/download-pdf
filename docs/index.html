@@ -16,7 +16,7 @@
 function download1() {
 var pdf = ['Eloquent_JavaScript.pdf', 'javascript_tutorial.pdf']
 
-for (let i of pdf) {
+for (var i of pdf) {
   fetch(i).then(function(t) {
     return t.blob().then((b)=>{
         var a = document.createElement("a");
@@ -30,7 +30,7 @@ for (let i of pdf) {
 }
 function download2() {
 var pdf = ['Eloquent_JavaScript.pdf', 'javascript_tutorial.pdf']
-for (let i of pdf) {
+for (var i of pdf) {
   var link = document.createElement('a');
   link.href = i;
   link.download = i;
