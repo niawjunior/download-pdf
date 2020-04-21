@@ -30,10 +30,10 @@ for (var i of pdf) {
 }
 function download2() {
 var pdf = ['Eloquent_JavaScript.pdf', 'javascript_tutorial.pdf']
-for (var i of pdf) {
+for (var j of pdf) {
   var link = document.createElement('a');
-  link.href = i;
-  link.download = i;
+  link.href = j;
+  link.download = j;
   link.dispatchEvent(new MouseEvent('click'));
 }
 }
